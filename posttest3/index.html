@@ -1,151 +1,84 @@
-<!-- 
-DONE 1. Buatlah fitur darkmode dan light mode (jika awalnya light mode dapat berubah ke dark mode begitu juga sebaliknya)
-2. Lakukan manipulasi DOM minimal 2 style selain warna pada darkmode
-3. Gunakan salah satu fitur pop up box
-4. Gunakan addEventListener -->
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Golden Cake</title>
-    <link rel="icon" href="gambar/Logo.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <style>
-      body {
-        margin: 20px;
-        padding: 20px;
-        background-color: #fcfcfc;
-        color: #333333;
-        transition: 0.5s;
-      }
-      input[type="checkbox"] {
-        position: relative;
-        margin-top: 20px;
-        width: 40px;
-        height: 40px;
-        appearance: none;
-        background-color: #b2a216;
-        outline: none;
-        border-radius: 10px;
-        transition: 0.5s ease;
-        cursor: pointer;
-      }
-      input[type="checkbox"] :checked {
-        background-color: #cccc0e;
-      }
-      input[type="checkbox"] :before {
-        content: "";
-        position: absolute;
-        width: 16px;
-        height: 16px;
-        background-color: #fcfcfc;
-        border-radius: 50%;
-        top: 2px;
-        left: 2px;
-        transition: 0.5s ease;
-      }
-      input[type="checkbox"] :before {
-        transform: translate(20px);
-      }
-      .dark {
-        background-color: #333333;
-        color: #fcfcfc;
-      }
-    </style>
+    <title>Home</title>
   </head>
   <body>
-    <!-- Header -->
-    <header>
-      <h1>
-        <img src="gambar/Logo.png" alt="Logo" width="60" height="60" /> <br />
-        Golden Cake
-      </h1>
-    </header>
-    <!-- Nav bar -->
-    <nav class="navigator">
-      <ul>
-        <li><a href="index.html"> HOME </a></li>
-        <li><a href="#section1"> SHOP </a></li>
-        <li><a href="about me.html"> ABOUT ME </a></li>
-        <li><a href="#section2"> CONTACT </a></li>
+    <section>
+      <div class="circle" id="circle"></div>
+      <header>
+        <a href="#"><img src="Bakery-Logo.png" class="logo" alt="" /></a>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">What's New</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <label id="dark-change"></label>
+      </header>
+
+      <div class="content" id="content">
+        <div class="textBox">
+          <h2>
+            Belanja Online aman dan nyaman<br />di
+            <span>Golden Cake & Bakery</span>
+          </h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi,
+            magnam expedita! Excepturi tempore dicta porro dignissimos
+            voluptatem corrupti soluta cupiditate! Quae provident delectus illum
+            ut dolorem deleniti cupiditate perferendis reprehenderit.
+          </p>
+          <a href="">More Info</a>
+        </div>
+
+        <div class="imgBox">
+          <img src="img3.png" class="waffle" />
+        </div>
+      </div>
+
+      <ul class="sci">
+        <li>
+          <a href="#"
+            ><img
+              src="facebook.png"
+              onclick="changeBackground('#000000')"
+              alt=""
+          /></a>
+        </li>
+        <li>
+          <a href="#"
+            ><img
+              src="twitter.png"
+              onclick="changeBackground('#ffffff')"
+              alt=""
+          /></a>
+        </li>
+        <li>
+          <a href="#"><img src="instagram.png" alt="" /></a>
+        </li>
       </ul>
-      <input type="checkbox" onclick="ubahMode()" />
-      <script>
-        function ubahMode() {
-          const ubah = document.body;
-          ubah.classList.toggle("dark");
-        }
-      </script>
-    </nav>
-    <content>
-      <img src="gambar/home.jpg" alt="cake" class="content-item" />
-      <h1>
-        <span class="CenterText">
-          Sweat Cake <br />
-          Made by Golden Cake
-        </span>
-      </h1>
-      <div id="section1">
-        <h3>Our Product</h3>
-        <div class="product">
-          <div>
-            <img src="gambar/cerry cake.jpg" alt="cherry cake" />
-            <p>Cherry Cake</p>
-            <p1> Rp 100.000,- </p1>
-          </div>
-          <div>
-            <img src="gambar/rainbow cake.jpg" alt="rainbow cake" />
-            <p>Rainbow Cake</p>
-            <p1> Rp 120.000,- </p1>
-          </div>
-          <div>
-            <img src="gambar/biscuit cake.jpg" alt="biscuit cake" />
-            <p>Biscuit Cake</p>
-            <p1> Rp 130.000,- </p1>
-          </div>
-          <div>
-            <img src="gambar/star cake.jpg" alt="star cake" />
-            <p>Star Cake</p>
-            <p1> Rp 110.000,- </p1>
-          </div>
-          <div>
-            <img src="gambar/oreo cake.jpg" alt="oreo cake" />
-            <p>Oreo Cake</p>
-            <p1> Rp 115.000,- </p1>
-          </div>
-        </div>
-        <div class="buttonsec1"><span> MORE PRODUCT </span></div>
-      </div>
-      <div id="section2">
-        <h3>Have A Question?</h3>
-        <div class="form">
-          <p1
-            >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.</p1
-          >
-          <form>
-            <input type="text" placeholder="Name" />
-            <input type="text" placeholder="Email" />
-            <textarea placeholder="Message"></textarea>
-            <input type="submit" value="Submit" />
-          </form>
-        </div>
-        <div class="contact">
-          <h2>Contact Me 📞</h2>
-          <p1>
-            Telp: 0895-4225-05673 <br />
-            Email: restysarawa11@gmail.com </p1
-          ><br /><br />
-          <h2>Opening Hours 🕖</h2>
-          <p1 class="schedule"> Monday-Friday: 7am - 10 pm </p1><br />
-          <p1 class="schedule"> Saturday-Sunday: 8am - 11pm </p1>
-        </div>
-      </div>
-    </content>
-    <footer>
-      <img class="tengah" src="gambar/Logo.png" alt="Logo" />
-    </footer>
-    <h3 class="bottom">©Copyright 2022 - Resty Sarawa</h3>
+    </section>
+
+    <script>
+      // manipulasi DOM
+      document.getElementById("content").style.position = "relative";
+      document.getElementById("circle").style.width = "100%";
+
+      //addEventListener on DarkMode
+      var content = document.getElementsByTagName("body")[0];
+      var darkMode = document.getElementById("dark-change");
+      darkMode.addEventListener("click", function () {
+        darkMode.classList.toggle("active");
+        content.classList.toggle("night");
+
+        //Pop Up Box
+        alert("Mode Changed");
+      });
+    </script>
   </body>
 </html>
